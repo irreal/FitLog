@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Select } from '@ngxs/store';
 import { AuthState } from '../shared/state/auth.state';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class HomePage implements OnInit {
 
-  constructor(private store: Store) {
+  constructor(private authService: AuthService) {
   }
 
   @Select(AuthState.token) token$: Observable<string>;
@@ -22,11 +23,6 @@ export class HomePage implements OnInit {
   }
 
 public  debugStuff() {
-    debugger;
-    this.store.selectSnapshot(s => {
-      console.log('mother fucking snapshot: ', s);
-    });
+  this.authService.testFunctions();
   }
-
-
 }
