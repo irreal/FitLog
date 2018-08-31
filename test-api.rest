@@ -1,0 +1,44 @@
+
+//Your environment should contain your default credentials
+//for any given base url.
+//Uncomment below lines to override environment config when testing specific users
+
+# @username = angelst1
+# @password = q123W456
+
+
+# @name login
+POST {{baseUrl}}/{{version}}/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"{{username}}",
+    "password":"{{password}}"
+}
+
+###
+
+# @name createUser
+POST {{baseUrl}}/{{version}}/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"{{username}}",
+    "password":"{{password}}",
+    "firstName": "Miloš",
+    "lastName": "Tester"
+}
+
+###
+
+# @name exampleMethod
+
+GET {{baseUrl}}/{{version}}/dash/ HTTP/1.1
+Authorization: {{login.response.body.$.token}}
+
+# ?access_token={{login.response.body.$.access_token}}
+# &userId={{login.response.body.$.user_id}}
+# &token={{login.response.body.$.user_token}}
+
+
+###

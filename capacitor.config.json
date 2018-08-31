@@ -1,0 +1,6 @@
+{
+  "appId": "ml.spasojevic.mobile.fitlog",
+  "appName": "FitLog",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

@@ -1,0 +1,11 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <div #ref>
+    <ng-content select="ion-title"></ng-content>
+  </div>
+  <ion-title *ngIf="ref.children.length == 0">
+    FitLog
+  </ion-title>
+</ion-toolbar>

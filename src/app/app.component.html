@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu [disabled]="!(token$ | async)">
+      <ion-header>
+        <ion-toolbar>
+          <ion-img class="menu-header logo" src="../assets/images/logo.png"></ion-img>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div *ngIf="token$ | async">
+          <ion-list>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; index as i;">
+              <ion-item [ngClass]="'delay-list-' + i + ' menu-item'" [routerDirection]="'root'" [routerLink]="[p.url]">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{p.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item (click)="logout()" [ngClass]="'delay-list-' + appPages.length  + ' menu-item'">
+                <ion-icon slot="start" name="exit"></ion-icon>
+                <ion-label>Izloguj se</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

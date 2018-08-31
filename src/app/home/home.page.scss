@@ -1,0 +1,41 @@
+ion-col span {
+    font-size: 18px;
+}
+ion-col span.total {
+    color: green;
+}
+ion-col span.late {
+    color: red;
+}
+ion-col span.total {
+    color: black;
+
+}
+ion-row {
+    margin: 0 0 25px 0
+}
+
+
+.snapshot-feature {
+    margin-top: 6px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: #2196f3;
+    text-align: center;
+    height: 100%;
+    line-height: 120%;
+    
+    strong {
+      font-size: 24px;
+      line-height: 100%;
+      display: block;
+    }
+    span {
+        display:block;
+        margin-top:15px;
+    }
+  }
+
+  ion-content {
+      padding-top:25px;
+  }

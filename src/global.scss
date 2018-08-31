@@ -1,0 +1,55 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/colors.css";
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.menu-header.logo {
+max-width: 250px;
+margin-left:auto;
+margin-right:auto;
+}
+
+@keyframes slide-in-from-left-animation {
+    from {
+      transform: translateX(-100%);
+      opacity: 0.0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-animation {
+      from {
+          transform: scale(0);
+      }
+      to {
+          transform: scale(1);
+      }
+  }
+  
+  
+  .menu-enabled.show-menu .menu-item {
+  animation-name: slide-in-from-left-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+  }
+  
+  @for $i from 0 through 10 {
+    .delay-list-#{$i} {
+      animation-delay: ($i * 0.03) + 0.2s;
+    }
+  }
+  @for $i from 1 through 10 {
+    .delay-#{$i} {
+      animation-delay: $i * 0.1s;
+    }
+  }
+   
